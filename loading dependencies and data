@@ -1,0 +1,28 @@
+# INSTALLING DEPENDENCIES
+!pip install tokenizers -q
+!pip install transformers -q
+!pip install datasets -q
+!pip install evaluate -q
+!pip install wandb -q
+!pip install transformers[torch]
+!pip install accelerate>=0.20.1
+
+# INPORTING LIBRARIES
+import wandb
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report, confusion_matrix
+from sklearn.metrics import confusion_matrix, classification_report, accuracy_score, precision_score, recall_score, f1_score
+import seaborn as sns
+import torch
+import evaluate
+from transformers import AutoTokenizer
+from transformers import Trainer, TrainingArguments
+from transformers import AutoModelForSequenceClassification
+from transformers import EarlyStoppingCallback
+import re
+import string
+torch.manual_seed(42)
+import pandas as pd
+
+# UPLOADING THE DATASET
+df = pd.read_csv("tweets.csv") // I have saved the dataset by the name of tweets.csv you can change the name accordingly
